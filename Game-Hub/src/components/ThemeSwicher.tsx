@@ -8,6 +8,7 @@ function ThemeSwitcher() {
     <HStack spacing={4}>
       <BsSun />
       <Switch
+        colorScheme="green"
         size="md"
         isChecked={colorMode === "dark"}
         onChange={toggleColorMode}
