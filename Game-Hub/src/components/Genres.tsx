@@ -7,9 +7,9 @@ function Genres() {
 
   return (
     <>
-      <List marginX="10px">
+      <List>
         {data.map((genre) => (
-          <ListItem key={genre.id} marginY="6px">
+          <ListItem key={genre.id} paddingY="6px">
             <HStack>
               <Image
                 borderRadius="10px"
