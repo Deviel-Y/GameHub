@@ -5,6 +5,7 @@ import {
   Image,
   Spinner,
   Button,
+  Heading,
 } from "@chakra-ui/react";
 import useGenres, { Genre } from "../hooks/useGenres";
 import getCropedImageUrl from "../services/image-url";
@@ -22,6 +23,9 @@ function GenreList({ selectedGenre, onSelectGenre }: Props) {
   return (
     <>
       {isLoading && <Spinner />}
+      <Heading fontSize="25px" marginBottom={5}>
+        Genres
+      </Heading>
       <List>
         {data.map((genre) => (
           <ListItem key={genre.id} paddingY="6px">
