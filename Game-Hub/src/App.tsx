@@ -18,6 +18,7 @@ function App() {
         lg: "250px 1fr",
         base: "1fr",
       }}
+      templateRows={{ lg: "80px", base: "80px" }}
     >
       <GridItem area="nav">
         <NavBar />

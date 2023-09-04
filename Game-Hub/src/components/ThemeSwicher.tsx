@@ -6,14 +6,14 @@ function ThemeSwitcher() {
 
   return (
     <HStack spacing={4}>
-      <BsSun />
+      <BsSun size="30" />
       <Switch
         colorScheme="green"
-        size="md"
+        size={{ lg: "md", base: "lg" }}
         isChecked={colorMode === "dark"}
         onChange={toggleColorMode}
       />
-      <BsMoon />
+      <BsMoon size="30" />
     </HStack>
   );
 }
