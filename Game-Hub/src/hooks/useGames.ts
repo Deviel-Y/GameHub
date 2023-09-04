@@ -23,6 +23,7 @@ function useGames(gameQuery: GameQuery | null) {
         genres: gameQuery?.genre?.id,
         platforms: gameQuery?.platform?.id,
         ordering: gameQuery?.order,
+        search: gameQuery?.searchGame,
       },
     },
     [gameQuery]
