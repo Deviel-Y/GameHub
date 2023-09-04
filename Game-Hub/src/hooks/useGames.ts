@@ -1,3 +1,4 @@
+import { GameQuery } from "../App";
 import useData from "./useData";
 import { Genre } from "./useGenres";
 
@@ -15,14 +16,16 @@ export interface Game {
   metacritic: number;
 }
 
-function useGames(
-  selectedGenre: Genre | null,
-  selectedPlatform: Platform | null
-) {
+function useGames(gameQuery: GameQuery | null) {
   return useData<Game>(
     "/games",
-    { params: { genres: selectedGenre?.id, platforms: selectedPlatform?.id } },
-    [selectedGenre?.id, selectedPlatform?.id]
+    {
+      params: {
+        genres: gameQuery?.genre?.id,
+        platforms: gameQuery?.platform?.id,
+      },
+    },
+    [gameQuery]
   );
 }
 

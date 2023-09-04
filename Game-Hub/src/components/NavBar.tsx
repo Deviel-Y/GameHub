@@ -5,7 +5,7 @@ import ThemeSwitcher from "./ThemeSwicher";
 function NavBar() {
   return (
     <HStack justifyContent="space-between" paddingY="5px">
-      <Image boxSize={{ lg: "80px", base: "70px" }} src={logo} />
+      <Image boxSize={{ lg: "65px", base: "70px" }} src={logo} />
       <ThemeSwitcher />
     </HStack>
   );
