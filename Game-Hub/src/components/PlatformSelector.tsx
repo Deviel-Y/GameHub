@@ -8,7 +8,7 @@ interface Props {
   selectedPlatforms: Platform | null;
 }
 
-function Platforms({ onSelectPlatform, selectedPlatforms }: Props) {
+function PlatformSelector({ onSelectPlatform, selectedPlatforms }: Props) {
   const { data } = usePlatform();
   return (
     <Menu>
@@ -29,4 +29,4 @@ function Platforms({ onSelectPlatform, selectedPlatforms }: Props) {
   );
 }
 
-export default Platforms;
+export default PlatformSelector;
