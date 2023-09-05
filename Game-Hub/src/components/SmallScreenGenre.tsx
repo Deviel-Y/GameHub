@@ -11,7 +11,7 @@ function SmallScreenGenre({ onSelectGenre }: Props) {
 
   return (
     <Menu>
-      <MenuButton fontSize={17} as={Button} rightIcon={<BsChevronDown />}>
+      <MenuButton fontSize={15} as={Button} rightIcon={<BsChevronDown />}>
         Genre
       </MenuButton>
       <MenuList>
