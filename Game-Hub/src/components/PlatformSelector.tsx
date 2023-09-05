@@ -12,11 +12,7 @@ function PlatformSelector({ onSelectPlatform, selectedPlatforms }: Props) {
   const { data } = usePlatform();
   return (
     <Menu>
-      <MenuButton
-        fontSize={{ base: 20, md: 17, lg: 17 }}
-        as={Button}
-        rightIcon={<BsChevronDown />}
-      >
+      <MenuButton fontSize={17} as={Button} rightIcon={<BsChevronDown />}>
         {selectedPlatforms ? selectedPlatforms.name : "Platform"}
       </MenuButton>
       <MenuList>

@@ -1,18 +1,18 @@
-import { Menu, MenuButton, MenuList, MenuItem, Image } from "@chakra-ui/react";
-import logo from "../assets/logo.webp";
+import { Menu, MenuButton, MenuList, MenuItem, Button } from "@chakra-ui/react";
 import useGenres, { Genre } from "../hooks/useGenres";
+import { BsChevronDown } from "react-icons/bs";
 
 interface Props {
   onSelectGenre: (genre: Genre) => void;
 }
 
-function PlatformSelector({ onSelectGenre }: Props) {
+function SmallScreenGenre({ onSelectGenre }: Props) {
   const { data } = useGenres();
 
   return (
     <Menu>
-      <MenuButton>
-        <Image src={logo} boxSize="80px" objectFit="contain" />
+      <MenuButton fontSize={17} as={Button} rightIcon={<BsChevronDown />}>
+        Genre
       </MenuButton>
       <MenuList>
         {data.map((genre) => (
@@ -29,4 +29,4 @@ function PlatformSelector({ onSelectGenre }: Props) {
   );
 }
 
-export default PlatformSelector;
+export default SmallScreenGenre;
