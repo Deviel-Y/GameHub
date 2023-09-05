@@ -54,6 +54,7 @@ function App() {
       <GridItem area="main">
         <GameHeading gameQuery={gameQuery} />
         <HStack
+          paddingX={{ base: 0, md: 2, lg: 2 }}
           marginY={1}
           justifyContent={{
             base: "center",
