@@ -1,8 +1,7 @@
-import useData from "./useData";
-import { Platform } from "./useGames";
+import platforms from "../data/platforms";
 
 function usePlatform() {
-  return useData<Platform>("/platforms/lists/parents");
+  return { data: platforms };
 }
 
 export default usePlatform;
