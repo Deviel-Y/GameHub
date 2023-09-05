@@ -5,7 +5,7 @@ function ThemeSwitcher() {
   const { colorMode, toggleColorMode } = useColorMode();
 
   return (
-    <HStack spacing={4}>
+    <HStack spacing={1}>
       <BsSun size="20" />
       <Switch
         colorScheme="green"
