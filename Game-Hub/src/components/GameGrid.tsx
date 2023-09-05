@@ -11,7 +11,7 @@ interface Props {
 
 function GameGrid({ gameQuery }: Props) {
   const { data, isLoading } = useGames(gameQuery);
-  const skeletons: number[] = [1, 2, 3, 4, 5, 6];
+  const skeletons: number[] = [1, 2, 3, 4, 5, 6, 7, 8];
 
   return (
     <SimpleGrid
