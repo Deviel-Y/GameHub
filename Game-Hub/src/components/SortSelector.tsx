@@ -28,6 +28,7 @@ function SortSelector({ onOrderSelect, selectedOrder }: Props) {
       <MenuList>
         {sortOrder.map((order) => (
           <MenuItem
+            fontSize={18}
             onClick={() => onOrderSelect(order.value)}
             key={order.value}
           >

@@ -9,7 +9,7 @@ function ThemeSwitcher() {
       <BsSun size="20" />
       <Switch
         colorScheme="green"
-        size={{ lg: "md", base: "lg" }}
+        size={{ lg: "md", base: "md" }}
         isChecked={colorMode === "dark"}
         onChange={toggleColorMode}
       />

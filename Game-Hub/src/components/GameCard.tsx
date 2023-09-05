@@ -12,7 +12,7 @@ function GameCard({ games }: Props) {
   return (
     <Card>
       <Image src={getCropedImageUrl(games.background_image)} />
-      <Heading paddingX={5} paddingY={1} fontSize="2xl">
+      <Heading paddingX={5} paddingY={2} fontSize="2xl">
         {games.name}
       </Heading>
       <HStack justifyContent={"space-between"} paddingX={5}>
