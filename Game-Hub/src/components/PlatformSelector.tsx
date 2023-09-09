@@ -16,7 +16,7 @@ function PlatformSelector({ onSelectPlatform, selectedPlatforms }: Props) {
         {selectedPlatforms ? selectedPlatforms.name : "Platform"}
       </MenuButton>
       <MenuList>
-        {data.map((platform) => (
+        {data.results.map((platform) => (
           <MenuItem
             fontSize={18}
             onClick={() => onSelectPlatform(platform)}

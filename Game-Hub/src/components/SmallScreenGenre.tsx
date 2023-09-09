@@ -15,7 +15,7 @@ function SmallScreenGenre({ onSelectGenre }: Props) {
         Genre
       </MenuButton>
       <MenuList>
-        {data.map((genre) => (
+        {data?.results.map((genre) => (
           <MenuItem
             fontSize={18}
             onClick={() => onSelectGenre(genre)}
