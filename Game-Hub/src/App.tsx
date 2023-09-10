@@ -1,18 +1,16 @@
 import { Grid, GridItem, HStack, Show } from "@chakra-ui/react";
-import NavBar from "./components/NavBar";
-import GameGrid from "./components/GameGrid";
-import GenreList from "./components/GenreList";
 import { useState } from "react";
-import { Genre } from "./hooks/useGenres";
-import PlatformSelector from "./components/PlatformSelector";
-import { Platform } from "./hooks/usePlatform";
-import SortSelector from "./components/SortSelector";
+import GameGrid from "./components/GameGrid";
 import GameHeading from "./components/GameHeading";
+import GenreList from "./components/GenreList";
+import NavBar from "./components/NavBar";
+import PlatformSelector from "./components/PlatformSelector";
 import NavButtonGenre from "./components/SmallScreenGenre";
+import SortSelector from "./components/SortSelector";
 
 export interface GameQuery {
-  genre: Genre | null;
-  platform: Platform | null;
+  genreId?: number;
+  platformId?: number;
   order: string | null;
   searchGame: string | null;
 }
@@ -44,9 +42,9 @@ function App() {
       <Show above="md">
         <GridItem area="aside" paddingX={2}>
           <GenreList
-            selectedGenre={gameQuery.genre}
+            selectedGenreId={gameQuery.genreId}
             onSelectGenre={(selectedGenre) =>
-              setGameQuery({ ...gameQuery, genre: selectedGenre })
+              setGameQuery({ ...gameQuery, genreId: selectedGenre.id })
             }
           />
         </GridItem>
@@ -63,9 +61,9 @@ function App() {
           }}
         >
           <PlatformSelector
-            selectedPlatforms={gameQuery.platform}
+            selectedPlatformsId={gameQuery.platformId}
             onSelectPlatform={(selectedPlatform) =>
-              setGameQuery({ ...gameQuery, platform: selectedPlatform })
+              setGameQuery({ ...gameQuery, platformId: selectedPlatform.id })
             }
           />
 
@@ -79,7 +77,7 @@ function App() {
           <Show below="md">
             <NavButtonGenre
               onSelectGenre={(selectedGenre) =>
-                setGameQuery({ ...gameQuery, genre: selectedGenre })
+                setGameQuery({ ...gameQuery, genreId: selectedGenre.id })
               }
             />
           </Show>
