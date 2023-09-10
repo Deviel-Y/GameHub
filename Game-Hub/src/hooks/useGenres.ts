@@ -14,8 +14,8 @@ const useGenres = () => {
   return useQuery({
     queryKey: ["genres"],
     queryFn: apiClient.getAll,
-    initialData: { count: genres.length, results: genres },
     staleTime: 24 * 60 * 60 * 1000, //24h
+    initialData: { count: genres.length, results: genres },
   });
 };
 

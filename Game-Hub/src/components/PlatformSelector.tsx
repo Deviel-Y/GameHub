@@ -1,7 +1,7 @@
 import { Menu, MenuButton, Button, MenuList, MenuItem } from "@chakra-ui/react";
 import { BsChevronDown } from "react-icons/bs";
 import usePlatform from "../hooks/usePlatform";
-import { Platform } from "../hooks/useGames";
+import { Platform } from "../hooks/usePlatform";
 
 interface Props {
   onSelectPlatform: (platform: Platform) => void;
@@ -16,7 +16,7 @@ function PlatformSelector({ onSelectPlatform, selectedPlatforms }: Props) {
         {selectedPlatforms ? selectedPlatforms.name : "Platform"}
       </MenuButton>
       <MenuList>
-        {data.results.map((platform) => (
+        {data?.results.map((platform) => (
           <MenuItem
             fontSize={18}
             onClick={() => onSelectPlatform(platform)}
