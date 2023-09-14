@@ -5,7 +5,7 @@ import useFindPlatform from "../hooks/useFindPlatform";
 import { Platform } from "../services/platformService";
 
 interface Props {
-  onSelectPlatform: (platform: Platform | "") => void;
+  onSelectPlatform: (platform: Platform | null) => void;
   selectedPlatformsId?: number;
 }
 
@@ -20,7 +20,9 @@ function PlatformSelector({ onSelectPlatform, selectedPlatformsId }: Props) {
         {selectedPlatform ? selectedPlatform.name : "Platform"}
       </MenuButton>
       <MenuList fontSize={18}>
-        <MenuItem onClick={() => onSelectPlatform("")}>All Platforms</MenuItem>
+        <MenuItem onClick={() => onSelectPlatform(null)}>
+          All Platforms
+        </MenuItem>
         {data?.results.map((platform) => (
           <MenuItem
             onClick={() => onSelectPlatform(platform)}

@@ -63,7 +63,7 @@ function App() {
           <PlatformSelector
             selectedPlatformsId={gameQuery.platformId}
             onSelectPlatform={(selectedPlatform) =>
-              setGameQuery({ ...gameQuery, platformId: selectedPlatform.id })
+              setGameQuery({ ...gameQuery, platformId: selectedPlatform?.id })
             }
           />
 
