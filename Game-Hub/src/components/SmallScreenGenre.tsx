@@ -1,13 +1,10 @@
-import { Menu, MenuButton, MenuList, MenuItem, Button } from "@chakra-ui/react";
-import useGenres from "../hooks/useGenres";
+import { Button, Menu, MenuButton, MenuItem, MenuList } from "@chakra-ui/react";
 import { BsChevronDown } from "react-icons/bs";
-import { Genre } from "../services/genreService";
+import useGenres from "../hooks/useGenres";
+import useGameQueryStore from "../store";
 
-interface Props {
-  onSelectGenre: (genre: Genre) => void;
-}
-
-function SmallScreenGenre({ onSelectGenre }: Props) {
+function SmallScreenGenre() {
+  const setSelectedGenre = useGameQueryStore((s) => s.setGenreId);
   const { data } = useGenres();
 
   return (
@@ -19,7 +16,7 @@ function SmallScreenGenre({ onSelectGenre }: Props) {
         {data?.results.map((genre) => (
           <MenuItem
             fontSize={18}
-            onClick={() => onSelectGenre(genre)}
+            onClick={() => setSelectedGenre(genre.id)}
             key={genre.id}
           >
             {genre.name}
