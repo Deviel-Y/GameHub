@@ -23,7 +23,7 @@ function GenreList() {
     <>
       {isLoading && <Spinner />}
       <Heading fontSize="25px" marginBottom={5}>
-        Genres.
+        Genres
       </Heading>
       <List>
         {data?.results.map((genre) => (
