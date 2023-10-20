@@ -1,19 +1,18 @@
-import { Grid, GridItem, HStack, Show } from "@chakra-ui/react";
-import GameGrid from "./components/GameGrid";
-import GameHeading from "./components/GameHeading";
-import GenreList from "./components/GenreList";
-import NavBar from "./components/NavBar";
-import PlatformSelector from "./components/PlatformSelector";
-import NavButtonGenre from "./components/SmallScreenGenre";
-import SortSelector from "./components/SortSelector";
+import { Grid, Show, GridItem, HStack } from "@chakra-ui/react";
+import GameGrid from "../components/GameGrid";
+import GameHeading from "../components/GameHeading";
+import GenreList from "../components/GenreList";
+import PlatformSelector from "../components/PlatformSelector";
+import SortSelector from "../components/SortSelector";
+import SmallScreenGenre from "../components/SmallScreenGenre";
 
-function App() {
+const HomePage = () => {
   return (
     <Grid
       templateAreas={{
-        lg: `"nav nav" "aside main"`,
-        md: `"nav nav" "aside main"`,
-        base: `"nav" "main"`,
+        lg: ` "aside main"`,
+        md: ` "aside main"`,
+        base: `"main"`,
       }}
       templateColumns={{
         md: "200px 1fr",
@@ -22,9 +21,6 @@ function App() {
       }}
       templateRows={{ lg: "80px", base: "80px" }}
     >
-      <GridItem area="nav">
-        <NavBar />
-      </GridItem>
       <Show above="md">
         <GridItem area="aside" paddingX={2}>
           <GenreList />
@@ -46,12 +42,13 @@ function App() {
           <SortSelector />
 
           <Show below="md">
-            <NavButtonGenre />
+            <SmallScreenGenre />
           </Show>
         </HStack>
         <GameGrid />
       </GridItem>
     </Grid>
   );
-}
-export default App;
+};
+
+export default HomePage;
