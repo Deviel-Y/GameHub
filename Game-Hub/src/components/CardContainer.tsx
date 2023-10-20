@@ -7,7 +7,14 @@ interface Probs {
 
 function CardContainer({ children }: Probs) {
   return (
-    <Box borderRadius="10px" overflow="hidden">
+    <Box
+      _hover={{
+        transform: "scale(1.04)",
+        transition: "all 0.1s ease-in",
+      }}
+      borderRadius="10px"
+      overflow="hidden"
+    >
       {children}
     </Box>
   );

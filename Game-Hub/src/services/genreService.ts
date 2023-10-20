@@ -6,4 +6,4 @@ export interface Genre {
   image_background: string;
 }
 
-export default new APIClient<Genre>("genre");
+export default new APIClient<Genre>("/genre");
