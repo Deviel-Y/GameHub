@@ -2,7 +2,7 @@ import { Card, HStack, Heading, Image } from "@chakra-ui/react";
 import PlatformIconList from "./PlatformIconList";
 import Metacritic from "./Metacritic";
 import getCropedImageUrl from "../services/image-url";
-import { Game } from "../services/gameService";
+import { Game } from "../Entities/Game";
 import { Link } from "react-router-dom";
 
 interface Props {
