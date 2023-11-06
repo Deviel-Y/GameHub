@@ -12,22 +12,22 @@ const ExpandableText = ({ children }: prop) => {
 
   const summery: string = children.substring(0, limit) + "...";
 
-  const textToShow = isExpanded ? summery : children;
+  const textToShow = isExpanded ? children : summery;
 
   if (!children) return null;
 
   return (
     <>
       <Text>
-        {textToShow}{" "}
+        {textToShow}
         <Button
           colorScheme="yellow"
           size="xs"
-          paddingLeft={1}
+          marginLeft={1}
           fontWeight="bold"
           onClick={() => setExpanded(!isExpanded)}
         >
-          {isExpanded ? "Read More" : "Show Less"}
+          {isExpanded ? "Show Less" : "Read More"}
         </Button>
       </Text>
     </>
