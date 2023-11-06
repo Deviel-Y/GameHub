@@ -1,0 +1,13 @@
+import { useQuery } from "@tanstack/react-query";
+import APIClient from "../services/api-client";
+import { Trailer } from "../Entities/Trailer";
+
+const useGameTrailer = (gameId: number) => {
+  const apiClient = new APIClient<Trailer>(`/games/${gameId}/movies`);
+
+  return useQuery({
+    queryKey: ["trailer", gameId],
+    queryFn: apiClient.getAll,
+  });
+};
+export default useGameTrailer;
