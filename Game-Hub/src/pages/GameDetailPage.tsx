@@ -27,6 +27,7 @@ const GameDetailPage = () => {
         borderRadius={15}
         paddingBottom={5}
         objectFit={"cover"}
+        width="full"
       />
       <SimpleGrid columns={{ base: 1, md: 2 }} spacing={5}>
         <GridItem>
