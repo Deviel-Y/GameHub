@@ -14,7 +14,8 @@ function SortSelector() {
 
   const setSelectedOrder = useGameQueryStore((s) => s.setSortOrder);
 
-  const selectedOrder = useGameQueryStore((s) => s.gameQuery.order);
+  const selectedOrder = useGameQueryStore((s) => s.gameQuery.sortOrder);
+
   const currentSortOrder = sortOrder.find(
     (order) => order.value === selectedOrder
   );
