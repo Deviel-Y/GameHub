@@ -18,7 +18,7 @@ function PlatformSelector() {
         {selectedPlatform ? selectedPlatform.name : "Platform"}
       </MenuButton>
       <MenuList fontSize={18}>
-        <MenuItem onClick={() => setSelectedPlatform(null)}>
+        <MenuItem onClick={() => setSelectedPlatform(selectedPlatformId!)}>
           All Platforms
         </MenuItem>
         {data?.results.map((platform) => (
