@@ -1,8 +1,8 @@
 import { HStack, Image } from "@chakra-ui/react";
-import logo from "../assets/logo.webp";
-import ThemeSwitcher from "./ThemeSwicher";
-import SearchGames from "./SearchGames";
 import { Link } from "react-router-dom";
+import logo from "../assets/logo.webp";
+import SearchGames from "./SearchGames";
+import ThemeSwitcher from "./ThemeSwicher";
 
 function NavBar() {
   return (
