@@ -1,42 +1,41 @@
 import { Link } from "@chakra-ui/react";
 import { BiArrowToTop } from "react-icons/bi";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 
 const GoUpButton = () => {
   const [showButton, setShowButton] = useState(false);
+  const scrollThreshold = 350;
+
+  const handleScroll = useCallback(() => {
+    setShowButton(window.scrollY > scrollThreshold);
+  }, [scrollThreshold]);
 
   useEffect(() => {
-    const handleScroll = () => {
-      const scrollTop = window.scrollY;
-      if (scrollTop > 200) {
-        setShowButton(true);
-      } else {
-        setShowButton(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [handleScroll]);
 
   return (
     <Link
       href="#"
-      variant={"solid"}
-      backgroundColor={"green"}
+      role="button"
+      aria-label="Scroll back to top"
+      opacity={showButton ? "1" : "0"}
+      backgroundColor="green"
       pos="fixed"
       borderRadius={10}
-      bottom={showButton ? "20px" : "-60px"} // Adjust the position based on showButton state
+      bottom={showButton ? "20px" : "-60px"}
       right="20px"
-      opacity={showButton ? 1 : 0} // Show/hide the button based on showButton state
-      transition="bottom 0.5s, opacity 0.5s" // Smooth transition for bottom and opacity changes
+      zIndex={1}
+      transition="bottom 0.3s ease, opacity 0.3s ease"
       _hover={{
         transform: "scale(1.2)",
-        transition: "all 0.2s ease-in",
+        transition: "transform 0.2s ease-in-out",
       }}
+      onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} // Programmatically handle scroll to top
     >
       <BiArrowToTop size="40px" />
     </Link>
