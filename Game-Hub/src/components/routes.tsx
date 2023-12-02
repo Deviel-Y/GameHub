@@ -13,7 +13,7 @@ const route = createBrowserRouter([
     children: [
       { index: true, element: <HomePage /> },
       { path: "games/:slug", element: <GameDetailPage /> },
-      { path: "screenshot/:id", element: <ViewScreenshot /> },
+      { path: ":slug/screenshot/:id", element: <ViewScreenshot /> },
     ],
   },
 ]);

@@ -11,10 +11,14 @@ import GameAttributes from "../components/GameAttributes";
 import GameTrailer from "../components/GameTrailer";
 import Screenshots from "../components/Screenshots";
 import useGame from "../hooks/useGame";
+import useGameIdStore from "../gameIdStore";
 
 const GameDetailPage = () => {
   const { slug } = useParams();
   const { data: game, error, isLoading } = useGame(slug!);
+
+  const setGameSlug = useGameIdStore((store) => store.setGameSlug);
+  setGameSlug(slug!);
 
   if (isLoading) return <Spinner />;
 
