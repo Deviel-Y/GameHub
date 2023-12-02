@@ -3,6 +3,7 @@ import HomePage from "../pages/HomePage";
 import Layout from "../pages/Layout";
 import GameDetailPage from "../pages/GameDetailPage";
 import ErrorPage from "../pages/ErrorPage";
+import ViewScreenshot from "./ViewScreenshot";
 
 const route = createBrowserRouter([
   {
@@ -12,6 +13,7 @@ const route = createBrowserRouter([
     children: [
       { index: true, element: <HomePage /> },
       { path: "games/:slug", element: <GameDetailPage /> },
+      { path: "screenshot/:id", element: <ViewScreenshot /> },
     ],
   },
 ]);
