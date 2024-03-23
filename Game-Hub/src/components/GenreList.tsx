@@ -12,20 +12,6 @@ import getCropedImageUrl from "../services/image-url";
 import useGameQueryStore from "../store";
 
 function GenreList() {
-  window.addEventListener("scroll", function () {
-    const aside = document.querySelector("aside");
-    const offset = aside?.offsetTop || 10;
-    const desiredOffset = 80;
-
-    if (window.scrollY >= offset) {
-      aside?.classList.add("stickOnTop");
-    }
-
-    if (window.scrollY < desiredOffset) {
-      aside?.classList.remove("stickOnTop");
-    }
-  });
-
   const setSelectedGenreId = useGameQueryStore((s) => s.setGenreId);
   const SelectedGenreId = useGameQueryStore((s) => s.gameQuery.genreId);
 
